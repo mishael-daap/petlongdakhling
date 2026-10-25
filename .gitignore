@@ -6,3 +6,5 @@ out/
 .DS_Store
 *.tsbuildinfo
 .hallmark/preflight.json
+.vercel
+.env*
