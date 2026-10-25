@@ -2,11 +2,13 @@
  * hero: Index, head resting above the record · nav: edge-aligned, wordmark and one action at opposite edges · footer: mast, wordmark over the real links · imagery: none yet, type and documents carry the page · signature: the record set as a proof sheet with crop marks and one forest-green guide
  * axes: light/roman-serif/warm · posture: restrained · contrast: pass · fold: pass · v2.0.0 */
 /* Hallmark · pre-emit critique: P_ H_ E_ S_ R_ V_ · weakest: no photographs, so the record sheet and the rules carry the mass; answered by giving the record real paper, crop marks and a measured guide, and by keeping every section type-led rather than padded. */
-/* Hallmark · waive 58 (About): the certificate list is 18 real titles, a table by design;
- * the check counts text inside the collapsed <details>, and no CV page with a footer fits
+/* Hallmark · waive 58 (About): four certificate areas of 18 real titles, an index by design;
+ * the check counts the text inside the collapsed <details>, and no CV page with a footer fits
  * 80 words in a 600px band. */
 /* Hallmark · waive 44c/79 (About): there is no portrait yet. The hero is a Banner and the
  * content pass adds the photograph; the empty lower half is the reserved space for it. */
+/* Hallmark · waive 77 (About, Education): two degrees, no photograph, so the section is two
+ * paper cards 218px tall rather than a 300px visual. Three across would invent a third degree. */
 /* Hallmark · waive 58 (Work): five project case notes are an index by design, and an index
  * cannot hold 80 words in a 600px band; density is handled with rules, a two-column row and
  * short lists rather than by cutting the work. */
