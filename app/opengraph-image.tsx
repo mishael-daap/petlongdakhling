@@ -1,7 +1,14 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
 import { ImageResponse } from "next/og";
 
 import { site } from "@/content/site";
 import { brand } from "@/lib/brand";
+
+const logo = `data:image/png;base64,${readFileSync(
+  join(process.cwd(), "public/brand/logo.png"),
+).toString("base64")}`;
 
 export const alt = `${site.fullName}, ${site.roleLine}`;
 export const size = { width: 1200, height: 630 };
@@ -22,15 +29,8 @@ export default function OpengraphImage() {
           padding: 72,
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <div
-            style={{
-              width: 48,
-              height: 48,
-              borderRadius: 24,
-              backgroundColor: brand.accent,
-            }}
-          />
+        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+          <img src={logo} width={72} height={72} alt="" />
           <div style={{ display: "flex", fontSize: 30, letterSpacing: "-0.01em" }}>
             {site.displayName}
           </div>

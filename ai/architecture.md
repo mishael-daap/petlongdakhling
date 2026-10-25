@@ -20,7 +20,7 @@
 - `components/` — small presentational pieces: `SiteHeader`, `SiteFooter`, `Section`, `ProjectEntry`, `CredentialGroup`, `CallToAction`, `PageIntro`.
 - `content/` — the only place copy lives: `site.ts` (name, role line, contact, nav, CV state), `experience.ts` (the hero record), `story.ts`, `projects.ts`, `credentials.ts`, `publications.ts`.
 - `lib/types.ts` — shared interfaces for the content modules. `lib/brand.ts` — the sRGB mirror of the palette for the OG image, which cannot read CSS variables.
-- `public/` — `cv/petlong-dakhling-cv.pdf`, and `images/` once assets arrive.
+- `public/` — `cv/` (the PDF and its README), `images/` once assets arrive, and `brand/` (the outlined "P." mark: `logo.svg` card, transparent marks, raster copies, README).
 
 ## Data Flow
 Request → Vercel edge → statically pre-rendered HTML from `app/` pages reading `content/` modules at build time → browser. No API, no database, no client-side data fetching; the only interactivity is the mobile nav and the `mailto:`/PDF links.
