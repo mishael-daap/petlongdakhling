@@ -10,6 +10,21 @@ export const metadata: Metadata = {
   description:
     "Five pieces of work: a state emergency response plan, IFC-aligned ESG and ESMS policy, climate emergency procedures, a sustainability club and a thousand articles on African energy.",
   alternates: { canonical: "/work" },
+  openGraph: {
+    type: "website",
+    locale: "en_NG",
+    url: "/work",
+    siteName: site.fullName,
+    title: `Work · ${site.fullName}`,
+    description:
+      "Five pieces of work: a state emergency response plan, IFC-aligned ESG and ESMS policy, climate emergency procedures, a sustainability club and a thousand articles on African energy.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Work · ${site.fullName}`,
+    description:
+      "Five pieces of work: a state emergency response plan, IFC-aligned ESG and ESMS policy, climate emergency procedures, a sustainability club and a thousand articles on African energy.",
+  },
 };
 
 export default function WorkPage() {

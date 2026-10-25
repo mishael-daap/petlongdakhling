@@ -43,7 +43,6 @@ export type Credential = {
 
 export type CredentialGroup = {
   area: string;
-  note: string;
   credentials: Credential[];
 };
 
@@ -52,4 +51,11 @@ export type Publication = {
   outlet: string;
   date: string;
   url: string;
+};
+
+export type EducationEntry = {
+  award: string;
+  institution: string;
+  years?: string;
+  logo?: string;
 };

@@ -1,28 +1,39 @@
 # Feature: About page
 
 ## Purpose
-Answer the questions a recruiter has after the work: what she has done, what she is trained in, what she has published, and whether she is available where they are hiring.
+Answer the questions a recruiter has after the work: what she has done, where she studied, what she is trained in, what she has published, and whether she is available where they are hiring.
 
 ## User Flow
 1. Arrives from Home or the nav.
-2. Reads the opening position and three paragraphs of practice.
-3. Scans credentials by area, IFC and IFRS first.
-4. Sees the three BellaNaija columns, each linking out.
-5. Reads location and availability, then emails or asks for the CV.
+2. Reads the opening position and the current-role paragraph.
+3. Sees Education first — Master of Laws (LLM), International Law and BA, International Relations, both Near East University, with the university mark beside each.
+4. Expands "Certificates of completion" if they want the 18 courses, grouped by area.
+5. Sees the three BellaNaija columns, each linking out.
+6. Reads location and availability, then emails or asks for the CV.
 
 ## Rules
-- Copy is first person and factual. No invented origin story: the "why sustainability" paragraph stays out until Petlong supplies it in the content pass.
-- The education line states the field (international relations and international law) and does not name an institution, because none is confirmed.
-- Credentials are certificates of completion and the page says so. No "accredited" claim.
-- Credential count is not stated: `BRIEF.md` says 19, the verified list has 18, so the page shows the list and no total.
-- External links open in a new tab, carry `rel="noopener noreferrer"` and announce themselves to screen readers.
-- Availability states Abuja, English, and openness to roles across Africa and internationally including remote and relocation. No visa or work-authorisation claim.
+- Copy is first person and factual. No invented origin story: the "why sustainability" paragraph stays out until Petlong supplies it.
+- Education names the institution and the award exactly as confirmed; years are omitted until supplied, never guessed.
+- Degrees sit above certificates because they are a different category, and the page says the certificates are not auditor or lead-verifier qualifications.
+- Credential count is shown as a computed number, not a typed one; `BRIEF.md`'s "19" and the verified list's 18 still disagree, so the page derives it from the data.
+- The certificate list is a collapsed `<details>` so About stays scannable; it opens without JavaScript.
+- External links open in a new tab, carry `rel="noopener noreferrer"` and announce themselves.
+- Availability states Abuja, English, and openness to roles across Africa and internationally including remote and relocation. No visa claim.
 
 ## Acceptance Criteria
-- [x] Four credential groups render all 18 verified credentials with issuer and date (date omitted where unknown).
-- [x] IFC and IFRS Foundation entries lead the first group.
-- [x] Group headings are `h3` under the `h2` "Credentials"; no heading skips.
+- [x] Education renders two degrees with institution and the university mark, above the credentials.
+- [x] The 18 credentials render in four groups with issuer and year, inside a working `<details>`.
+- [x] The count in the summary is computed from the array.
 - [x] Each publication links to its real BellaNaija URL.
 - [x] The closing band carries availability plus Email, CV on request and LinkedIn.
-- [x] Long credential titles wrap without pushing the issuer or date columns out of the row.
-- [x] One `h1`; per-page metadata and canonical set.
+- [x] Long credential titles wrap without pushing the issuer or year columns out of the row.
+- [x] One `h1`; heading order `h1 → h2 → h3`; per-page metadata and canonical set.
+- [x] No horizontal overflow at 375px or 1440px; the logo loads at 48×48 with empty alt (the institution name sits beside it).
+
+## Waived
+- Hallmark 58 on this route: the checker counts the collapsed certificate text; 18 real titles plus a footer cannot fit 80 words per 600px band. See the waiver line in `app/globals.css`.
+- Hallmark 44c/79: no portrait exists yet, so the hero is a Banner and the lower half is reserved for the photograph.
+
+## Still missing
+- Years for both degrees.
+- The origin paragraph and testimonials (content pass).

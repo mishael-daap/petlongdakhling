@@ -3,7 +3,6 @@ import type { CredentialGroup } from "@/lib/types";
 export const credentialGroups: CredentialGroup[] = [
   {
     area: "ESG and disclosure",
-    note: "The standards regulators and auditors are moving to.",
     credentials: [
       {
         title: "Elements of an Environmental and Social Management System",
@@ -47,7 +46,6 @@ export const credentialGroups: CredentialGroup[] = [
   },
   {
     area: "Climate adaptation and disaster risk",
-    note: "The ground the Bauchi plan stands on.",
     credentials: [
       {
         title: "Strengthening Climate Adaptation and Resilience",
@@ -68,7 +66,6 @@ export const credentialGroups: CredentialGroup[] = [
   },
   {
     area: "Gender and social inclusion",
-    note: "Inclusion treated as method, not as an annex.",
     credentials: [
       {
         title: "Gender Equality and Human Rights in Climate Action and Renewable Energy",
@@ -90,7 +87,6 @@ export const credentialGroups: CredentialGroup[] = [
   },
   {
     area: "Energy",
-    note: "How energy systems are governed and priced.",
     credentials: [
       {
         title: "Global Energy and Climate Policy",

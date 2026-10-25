@@ -18,9 +18,9 @@
 - `app/tokens.css`, `app/base.css` — the Hallmark scaffold: palette, type scale, spacing and the base element rules.
 - `app/icon.svg`, `app/opengraph-image.tsx`, `app/twitter-image.tsx` — site mark and generated 1200×630 preview.
 - `components/` — small presentational pieces: `SiteHeader`, `SiteFooter`, `Section`, `ProjectEntry`, `CredentialGroup`, `CallToAction`, `PageIntro`.
-- `content/` — the only place copy lives: `site.ts` (name, role line, contact, nav, CV state), `experience.ts` (the hero record), `story.ts`, `projects.ts`, `credentials.ts`, `publications.ts`.
+- `content/` — the only place copy lives: `site.ts` (name, role line, contact, nav, CV state), `experience.ts` (the hero record), `education.ts`, `story.ts`, `projects.ts`, `credentials.ts`, `publications.ts`.
 - `lib/types.ts` — shared interfaces for the content modules. `lib/brand.ts` — the sRGB mirror of the palette for the OG image, which cannot read CSS variables.
-- `public/` — `cv/` (the PDF and its README), `images/` once assets arrive, and `brand/` (the outlined "P." mark: `logo.svg` card, transparent marks, raster copies, README).
+- `public/` — `cv/` (the PDF and its README), `images/` (the university mark; the portrait still to come), and `brand/` (the outlined "P." mark: `logo.svg` card, transparent marks, raster copies, README).
 
 ## Data Flow
 Request → Vercel edge → statically pre-rendered HTML from `app/` pages reading `content/` modules at build time → browser. No API, no database, no client-side data fetching; the only interactivity is the mobile nav and the `mailto:`/PDF links.

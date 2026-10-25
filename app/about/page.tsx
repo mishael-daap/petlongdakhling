@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import { PageIntro } from "@/components/PageIntro";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { credentialGroups } from "@/content/credentials";
+import { education } from "@/content/education";
 import { publications } from "@/content/publications";
 import { cvMailto, site } from "@/content/site";
 import { story } from "@/content/story";
@@ -10,23 +12,33 @@ import { story } from "@/content/story";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Petlong Dakhling is a climate change and energy analyst in Abuja, Nigeria: emergency response planning, IFC-aligned ESMS, climate risk, and credentials in ESG disclosure, adaptation and gender inclusion.",
+    "Petlong Dakhling is a climate change and energy analyst in Abuja, Nigeria: LLM International Law and BA International Relations from Near East University, IFC-aligned ESMS work, and credentials in ESG disclosure, adaptation and gender inclusion.",
   alternates: { canonical: "/about" },
+  openGraph: {
+    type: "website",
+    locale: "en_NG",
+    url: "/about",
+    siteName: site.fullName,
+    title: `About · ${site.fullName}`,
+    description:
+      "Climate change and energy analyst in Abuja: LLM International Law and BA International Relations from Near East University, IFC-aligned ESMS work, and credentials in ESG disclosure, adaptation and gender inclusion.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `About · ${site.fullName}`,
+    description:
+      "Climate change and energy analyst in Abuja: LLM International Law and BA International Relations from Near East University, IFC-aligned ESMS work, and credentials in ESG disclosure, adaptation and gender inclusion.",
+  },
 };
 
 export default function AboutPage() {
   return (
     <>
       <section className="border-b border-rule">
-        <div className="container pb-16 pt-16">
+        <div className="container py-16 md:py-24">
           <PageIntro title="About" lead={story.opening} />
 
-          <div className="mt-14 max-w-[62ch] space-y-6 text-md text-ink-2">
-            {story.practice.map((paragraph) => (
-              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
-            ))}
-            <p>{story.education}</p>
-          </div>
+          <p className="mt-10 max-w-[62ch] text-md text-ink-2">{story.current}</p>
         </div>
       </section>
 
@@ -34,24 +46,63 @@ export default function AboutPage() {
         <div className="container py-20 md:py-24">
           <div className="md:grid md:grid-cols-12 md:gap-8">
             <div className="md:col-span-4">
-              <h2>Credentials</h2>
-              <p className="mt-4 max-w-[34ch] text-sm text-ink-2">
-                Certificates of completion, not auditor or lead-verifier
-                qualifications. The IFC and IFRS Foundation courses are the ones
-                closest to the work.
-              </p>
+              <h2>Background</h2>
             </div>
 
             <div className="mt-10 space-y-12 md:col-span-8 md:mt-0">
+              <div>
+                <h3 className="text-title leading-tight">Education</h3>
+                <ul className="ruled mt-5">
+                  {education.map((entry) => (
+                    <li key={entry.award} className="flex items-start gap-4 py-4">
+                      {entry.logo ? (
+                        <Image
+                          src={entry.logo}
+                          alt=""
+                          width={48}
+                          height={48}
+                          className="mt-0.5 h-12 w-12 shrink-0 object-contain mix-blend-multiply"
+                        />
+                      ) : null}
+                      <div className="min-w-0">
+                        <p className="font-display text-lg leading-snug">
+                          {entry.award}
+                        </p>
+                        <p className="mt-1 text-sm text-ink-2">
+                          {entry.institution}
+                        </p>
+                        {entry.years ? (
+                          <p className="num mt-1 text-sm text-muted">{entry.years}</p>
+                        ) : null}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <details className="mt-10">
+                <summary className="flex cursor-pointer items-baseline justify-between gap-4 border-t border-ink pt-4 text-sm text-ink-2">
+                  <span>Certificates of completion</span>
+                  <span className="num text-muted">
+                    {credentialGroups.reduce(
+                      (total, group) => total + group.credentials.length,
+                      0,
+                    )}
+                  </span>
+                </summary>
+                <p className="mt-4 max-w-[58ch] text-sm text-muted">
+                  Not auditor or lead-verifier qualifications. The IFC and IFRS
+                  Foundation courses sit closest to the work.
+                </p>
+                <div className="mt-8 space-y-10">
               {credentialGroups.map((group) => (
                 <div key={group.area}>
                   <h3 className="text-title leading-tight">{group.area}</h3>
-                  <p className="mt-2 text-sm text-muted">{group.note}</p>
                   <ul className="ruled mt-5">
                     {group.credentials.map((credential) => (
                       <li
                         key={credential.title}
-                        className="grid gap-1 py-3 md:grid-cols-12 md:gap-4"
+                        className="grid gap-1 py-4 md:grid-cols-12 md:gap-4 md:py-7"
                       >
                         <span className="text-md md:col-span-7">
                           {credential.title}
@@ -60,13 +111,15 @@ export default function AboutPage() {
                           {credential.issuer}
                         </span>
                         <span className="num text-sm text-muted md:col-span-2 md:text-right">
-                          {credential.date ?? ""}
+                          {credential.date ? credential.date.split(" ").pop() : ""}
                         </span>
                       </li>
                     ))}
                   </ul>
                 </div>
               ))}
+                </div>
+              </details>
             </div>
           </div>
         </div>

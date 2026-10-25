@@ -1,10 +1,11 @@
 # Tasks: About page
 
-- [x] Write the story block from verified material only, with no invented origin paragraph.
-- [x] Add the education line without an institution claim.
-- [x] Encode all 18 credentials in four groups with issuer and optional date.
-- [x] Render credentials in ruled 12-column rows with a stacked fallback.
+- [x] Write the hero from verified material: the opening position and the current-role paragraph, no invented origin story.
+- [x] Pull the two degrees from LinkedIn and add them as data: LLM International Law, BA International Relations, Near East University.
+- [x] Render Education above the credentials, with the university mark and empty alt.
+- [x] Move the 18 credentials into four groups inside a collapsed `<details>` with a computed count.
+- [x] Render the years, dropping the month for scanability.
 - [x] Add the three publications with external links and screen-reader hints.
 - [x] Add the availability band with email, CV on request and LinkedIn.
-- [x] Anchor `#credentials` for the Home link.
-- [x] Add metadata and canonical; verify heading order and 375px wrapping.
+- [x] Keep the `#credentials` anchor; add metadata and canonical.
+- [x] Verify heading order, 375px wrapping, logo load and details toggle.
