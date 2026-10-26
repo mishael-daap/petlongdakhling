@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { record } from "@/content/experience";
 import { projects } from "@/content/projects";
-import { cvMailto, site } from "@/content/site";
+import { cvHref, cvLabel, site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: { absolute: `${site.fullName} — ${site.roleLine}` },
@@ -23,11 +23,11 @@ export default function HomePage() {
               <p className="lead mt-6 text-ink-2">{site.stance}</p>
 
               <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
-                <ButtonLink href={`mailto:${site.email}`} variant="primary">
-                  Email me
+                <ButtonLink href={cvHref} variant="primary" download>
+                  {cvLabel}
                 </ButtonLink>
-                <a href={cvMailto} className="link text-sm">
-                  CV on request
+                <a href={`mailto:${site.email}`} className="link text-sm">
+                  Email me
                 </a>
                 <Link href="/work" className="link text-sm">
                   The work

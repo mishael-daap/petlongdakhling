@@ -5,7 +5,7 @@
 - [x] Collect the degree institution and award titles: Near East University, LLM International Law and BA International Relations.
 - [ ] Collect the years for both degrees.
 - [ ] Collect two testimonials with name, title and permission, or decide to ship without any.
-- [ ] Receive the CV PDF (received: 3 pages, contains a phone number and a second email address). Held outside the repo at `~/Documents/petlong-private/` until the GitHub repo is private. Then decide whether to publish it, place it at `public/cv/petlong-dakhling-cv.pdf` and set `cvAvailable: true`.
+- [x] Receive the CV PDF (3 pages) and publish it at `public/cv/Petlong-Dakhling-CV.pdf`; `cvAvailable` is `true` and every CV link downloads it. It carries her phone number and the `petlongdakhling@gmail.com` address, so it is public by her instruction — the repo should still be made private.
 - [x] Receive a portrait (`petlongs-dp.jpeg`, 400×400), placed at `public/images/petlong-dakhling.jpg` and rendered in the Home hero with a real alt.
 - [ ] Decide on a domain email and swap it in `content/site.ts` if wanted.
 - [ ] Confirm the Bauchi naming against her AEC contract; anonymise if any doubt.

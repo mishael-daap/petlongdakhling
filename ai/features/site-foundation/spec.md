@@ -17,7 +17,7 @@ Ship the shell every page will live in: a Next.js app with the design system's t
 - The visible name is **Petlong**; "Petlong Dakhling" appears only in `<title>`, meta description, Open Graph and the footer colophon.
 - The role line is: *Climate change and energy analyst working on ESG, climate risk and gender equality.*
 - Contact is a `mailto:markpetlong@gmail.com` link plus `linkedin.com/in/petlong-dakhling`; no form, no JavaScript handler.
-- CV actions read from `site.cvAvailable`. While it is `false` every CV link says "CV on request" and opens a mailto with the subject set; when the PDF lands, the same links become downloads. No link ever points at a missing file.
+- CV actions read from `site.cvAvailable`. It is now `true`: every CV link points at `/cv/Petlong-Dakhling-CV.pdf` with a `download` attribute. Flipping the flag back to `false` returns the same links to a mailto with the subject "CV request". No link ever points at a missing file.
 - No analytics, cookies, third-party scripts or external font requests.
 - Server Components only. The mobile nav uses `<details>`/`<summary>` so no client component is needed. For the same reason the nav does not mark the current page with `aria-current`: the shell is static and zero-JS, and each page names itself in its `h1`.
 - Shell must remain legible with images absent — it is a type-led design.

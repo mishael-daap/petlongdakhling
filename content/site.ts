@@ -9,8 +9,8 @@ export const site: SiteProfile = {
   location: "Abuja, Nigeria",
   email: "markpetlong@gmail.com",
   linkedinUrl: "https://www.linkedin.com/in/petlong-dakhling",
-  cvPath: "/cv/petlong-dakhling-cv.pdf",
-  cvAvailable: false,
+  cvPath: "/cv/Petlong-Dakhling-CV.pdf",
+  cvAvailable: true,
   siteUrl: "https://petlongdakhling.site",
   nav: [
     { href: "/work", label: "Work" },
@@ -21,3 +21,6 @@ export const site: SiteProfile = {
 export const cvMailto = `mailto:${site.email}?subject=${encodeURIComponent(
   "CV request",
 )}`;
+
+export const cvHref = site.cvAvailable ? site.cvPath : cvMailto;
+export const cvLabel = site.cvAvailable ? "Download CV" : "CV on request";

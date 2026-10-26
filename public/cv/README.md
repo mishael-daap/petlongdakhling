@@ -1,11 +1,11 @@
 # CV
 
-The download the site expects is `petlong-dakhling-cv.pdf` in this folder.
+`Petlong-Dakhling-CV.pdf` is the live download, served at `/cv/Petlong-Dakhling-CV.pdf`
+and linked from the header menu, the hero, About and the footer with a `download` attribute.
 
-Until that file is added, `site.cvAvailable` in `content/site.ts` stays `false` and every CV
-link renders as "CV on request" pointing at a mailto with the subject "CV request". When the
-PDF lands:
+`site.cvAvailable` in `content/site.ts` is `true`. Flip it to `false` and every CV link
+falls back to a mailto with the subject "CV request" — no broken links, no 404.
 
-1. Drop it in here as `petlong-dakhling-cv.pdf` (no spaces, lowercase).
-2. Set `cvAvailable: true` in `content/site.ts`. The links switch to the file and add `download`.
-3. Check the file is under 5 MB and that its metadata does not carry a previous employer's template.
+To replace the file: drop the new PDF here under the same name and keep it under 5 MB.
+Remember that a published CV is public: it carries her phone number and email, so any
+version uploaded here should be the one she is happy for anyone to read and keep.

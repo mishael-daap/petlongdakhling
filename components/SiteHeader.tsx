@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { ButtonLink } from "@/components/ui/ButtonLink";
-import { cvMailto, site } from "@/content/site";
+import { cvHref, cvLabel, site } from "@/content/site";
 
 export function SiteHeader() {
   return (
@@ -26,9 +26,7 @@ export function SiteHeader() {
               ))}
             </ul>
           </nav>
-          <ButtonLink href={`mailto:${site.email}`} variant="primary">
-            Email me
-          </ButtonLink>
+          <ButtonLink href={`mailto:${site.email}`}>Email me</ButtonLink>
         </div>
 
         <details className="relative sm:hidden">
@@ -44,8 +42,12 @@ export function SiteHeader() {
                   </li>
                 ))}
                 <li>
-                  <a href={cvMailto} className="link inline-flex min-h-11 items-center">
-                    CV on request
+                  <a
+                    href={cvHref}
+                    className="link inline-flex min-h-11 items-center"
+                    download
+                  >
+                    {cvLabel}
                   </a>
                 </li>
                 <li>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { cvMailto, site } from "@/content/site";
+import { cvHref, cvLabel, site } from "@/content/site";
 
 export function SiteFooter() {
   return (
@@ -39,8 +39,8 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
-              <a href={cvMailto} className="link">
-                CV on request
+              <a href={cvHref} className="link" download>
+                {cvLabel}
               </a>
             </li>
           </ul>

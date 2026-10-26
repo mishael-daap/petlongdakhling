@@ -6,7 +6,7 @@ import { ButtonLink } from "@/components/ui/ButtonLink";
 import { credentialGroups } from "@/content/credentials";
 import { education } from "@/content/education";
 import { publications } from "@/content/publications";
-import { cvMailto, site } from "@/content/site";
+import { cvHref, cvLabel, site } from "@/content/site";
 import { story } from "@/content/story";
 
 const certificateCount = credentialGroups.reduce(
@@ -173,8 +173,8 @@ export default function AboutPage() {
               <ButtonLink href={`mailto:${site.email}`} variant="primary">
                 Email me
               </ButtonLink>
-              <a href={cvMailto} className="link text-sm">
-                Ask for the CV
+              <a href={cvHref} className="link text-sm" download>
+                {cvLabel}
               </a>
               <a
                 href={site.linkedinUrl}
