@@ -35,7 +35,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <figure className="crop mt-12 w-full max-w-[300px] md:col-span-4 md:mt-2 md:justify-self-start md:pl-4">
+            <figure className="crop mt-12 w-full max-w-[300px] md:col-span-4 md:mt-2 md:justify-self-start md:ml-4">
               <Image
                 src="/images/petlong-dakhling.jpg"
                 alt="Portrait of Petlong Dakhling"
@@ -52,7 +52,7 @@ export default function HomePage() {
             <div className="guide">
               <span className="guide-readout">Selected record</span>
             </div>
-            <ol className="sheet crop mt-7 divide-y divide-rule">
+            <ol className="sheet mt-7 divide-y divide-rule">
               {record.map((role) => (
                 <li
                   key={`${role.org}-${role.period}`}
