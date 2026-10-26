@@ -8,7 +8,7 @@ import { projects } from "@/content/projects";
 import { cvHref, cvLabel, site } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: { absolute: `${site.fullName} — ${site.roleLine}` },
+  title: { absolute: "Home" },
   alternates: { canonical: "/" },
 };
 

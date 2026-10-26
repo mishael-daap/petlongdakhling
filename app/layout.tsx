@@ -29,8 +29,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(site.siteUrl),
   title: {
-    default: `${site.fullName} — ${site.roleLine}`,
-    template: `%s · ${site.fullName}`,
+    default: "Home",
+    template: "%s",
   },
   description:
     "Petlong Dakhling is a climate change and energy analyst in Abuja, Nigeria, working on ESG, climate risk and gender equality.",
