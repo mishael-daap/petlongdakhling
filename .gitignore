@@ -8,3 +8,6 @@ out/
 .hallmark/preflight.json
 .vercel
 .env*
+
+# private documents kept outside the repo
+/*.pdf

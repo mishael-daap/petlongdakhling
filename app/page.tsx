@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import { ButtonLink } from "@/components/ui/ButtonLink";
@@ -15,23 +16,39 @@ export default function HomePage() {
   return (
     <>
       <section className="proof border-b border-rule md:flex md:min-h-[calc(100dvh-76px)] md:flex-col md:justify-center">
-        <div className="container pb-16 pt-14">
-          <h1 className="max-w-[18ch]">Climate change and energy analyst</h1>
-          <p className="lead mt-6 text-ink-2">{site.stance}</p>
+        <div className="container pb-12 pt-14">
+          <div className="md:grid md:grid-cols-12 md:items-start md:gap-12">
+            <div className="md:col-span-8">
+              <h1 className="max-w-[18ch]">Climate change and energy analyst</h1>
+              <p className="lead mt-6 text-ink-2">{site.stance}</p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
-            <ButtonLink href={`mailto:${site.email}`} variant="primary">
-              Email me
-            </ButtonLink>
-            <a href={cvMailto} className="link text-sm">
-              CV on request
-            </a>
-            <Link href="/work" className="link text-sm">
-              The work
-            </Link>
+              <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
+                <ButtonLink href={`mailto:${site.email}`} variant="primary">
+                  Email me
+                </ButtonLink>
+                <a href={cvMailto} className="link text-sm">
+                  CV on request
+                </a>
+                <Link href="/work" className="link text-sm">
+                  The work
+                </Link>
+              </div>
+            </div>
+
+            <figure className="crop mt-12 w-full max-w-[300px] md:col-span-4 md:mt-2 md:justify-self-start md:pl-4">
+              <Image
+                src="/images/petlong-dakhling.jpg"
+                alt="Portrait of Petlong Dakhling"
+                width={400}
+                height={400}
+                priority
+                sizes="(min-width: 768px) 340px, 80vw"
+                className="h-auto w-full"
+              />
+            </figure>
           </div>
 
-          <div className="mt-14">
+          <div className="mt-10 md:mt-12">
             <div className="guide">
               <span className="guide-readout">Selected record</span>
             </div>
@@ -39,7 +56,7 @@ export default function HomePage() {
               {record.map((role) => (
                 <li
                   key={`${role.org}-${role.period}`}
-                  className="grid gap-2 px-5 py-4 md:grid-cols-12 md:items-baseline md:px-6"
+                  className="grid gap-2 px-5 py-3 md:grid-cols-12 md:items-baseline md:px-6"
                 >
                   <div className="md:col-span-8">
                     <p className="record-title font-display text-title leading-tight">
